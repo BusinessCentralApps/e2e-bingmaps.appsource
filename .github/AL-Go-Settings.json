@@ -1,29 +1,30 @@
 {
-  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go/55f06533726d052e7603277236f2bcbcd67fa6cf/Actions/.Modules/settings.schema.json",
   "type": "AppSource App",
-  "templateUrl": "https://github.com/microsoft/AL-Go-AppSource@preview",
-  "runs-on": "ubuntu-latest",
-  "unusedALGoSystemFiles": [
-    "AddExistingAppOrTestApp.yaml",
-    "CreateApp.yaml",
-    "CreateTestApp.yaml",
-    "CreatePerformanceTestApp.yaml"
-  ],
+  "doNotPublishApps": true,
   "deliverToAppSource": {
     "branches": [
       "main",
       "e2e"
     ]
   },
-  "useCompilerFolder": true,
-  "doNotPublishApps": true,
+  "runs-on": "ubuntu-latest",
+  "ghTokenWorkflowSecretName": "e2eghTokenWorkflow",
   "AZURE_CREDENTIALSSecretName": "AZURE_CREDENTIALS",
+  "templateUrl": "https://github.com/microsoft/AL-Go-AppSource@preview",
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go/55f06533726d052e7603277236f2bcbcd67fa6cf/Actions/.Modules/settings.schema.json",
   "useProjectDependencies": true,
-  "trustedSigning": {
-    "Endpoint": "https://neu.codesigning.azure.net",
-    "Account": "BCCodeSigningTest",
-    "CertificateProfile": "BCCodeSigningPublic"
-  },
   "trackALAlertsInGitHub": true,
-  "templateSha": "975f426167ed623761777eb2560ee7ec7ce0ab5d"
+  "unusedALGoSystemFiles": [
+    "AddExistingAppOrTestApp.yaml",
+    "CreateApp.yaml",
+    "CreateTestApp.yaml",
+    "CreatePerformanceTestApp.yaml"
+  ],
+  "templateSha": "975f426167ed623761777eb2560ee7ec7ce0ab5d",
+  "useCompilerFolder": true,
+  "trustedSigning": {
+    "Account": "BCCodeSigningTest",
+    "CertificateProfile": "BCCodeSigningPublic",
+    "Endpoint": "https://neu.codesigning.azure.net"
+  }
 }
